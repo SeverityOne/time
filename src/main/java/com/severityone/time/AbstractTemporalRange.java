@@ -111,6 +111,7 @@ public abstract class AbstractTemporalRange<T extends Temporal & Comparable<? su
             }
         }
 
+        @SuppressWarnings("unchecked")
         @Override
         public void forEachRemaining(final Consumer<? super T> action)
         {
