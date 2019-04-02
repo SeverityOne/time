@@ -57,6 +57,7 @@ public abstract class AbstractTemporalRange<T extends Temporal & Comparable<? su
             return current < size;
         }
 
+        @SuppressWarnings("unchecked")
         @Override
         public T next()
         {
@@ -81,6 +82,7 @@ public abstract class AbstractTemporalRange<T extends Temporal & Comparable<? su
             this.end = end;
         }
 
+        @SuppressWarnings("unchecked")
         @Override
         public boolean tryAdvance(final Consumer<? super T> action)
         {
