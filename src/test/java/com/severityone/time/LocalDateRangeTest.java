@@ -50,4 +50,16 @@ public class LocalDateRangeTest
                      .forEach(date -> actual.addAndGet(date.getDayOfMonth()));
         assertEquals(expected, actual.get());
     }
+
+    @Test
+    public void testNullCheck() {
+        assertThrows(NullPointerException.class, () -> LocalDateRange.of(null, null));
+    }
+
+    @Test
+    public void testEndlessLoop() {
+        final LocalDate startDate = LocalDate.now();
+        final LocalDate endDate = startDate.minusDays(7);
+        assertThrows(IllegalArgumentException.class, () -> LocalDateRange.of(startDate, endDate));
+    }
 }

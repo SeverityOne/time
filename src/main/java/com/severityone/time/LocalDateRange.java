@@ -2,9 +2,8 @@ package com.severityone.time;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.ValueRange;
 
-public final class LocalDateRange extends AbstractTemporalRange<LocalDate>
+public final class LocalDateRange extends TemporalRange<LocalDate>
 {
     private LocalDateRange(final LocalDate startInclusive, final LocalDate endExclusive)
     {
